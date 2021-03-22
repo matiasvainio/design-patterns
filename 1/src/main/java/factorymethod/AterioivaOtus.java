@@ -7,17 +7,17 @@ public abstract class AterioivaOtus {
     public abstract Juoma createJuoma();
 
 
-    public void aterioi(){
+    public void aterioi() {
         syö();
         juo();
     }
 
-    public void syö(){
+    public void syö() {
         System.out.println("Kylläpä ruoka maistuukin hyvältä");
     }
 
 
-    public void juo(){
+    public void juo() {
         if (juoma == null)
             juoma = createJuoma();
         System.out.println("Aterian jälkeen " + juoma + " tekee terää");
