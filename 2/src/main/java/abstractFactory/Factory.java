@@ -1,6 +1,6 @@
 package abstractFactory;
 
-public interface AbstractFactory {
+public interface Factory {
 
     Shirt createShirt();
 

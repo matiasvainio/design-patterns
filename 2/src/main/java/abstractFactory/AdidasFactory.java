@@ -1,6 +1,6 @@
 package abstractFactory;
 
-public class AdidasFactory implements AbstractFactory {
+public class AdidasFactory implements Factory {
 
     @Override
     public Shirt createShirt() {

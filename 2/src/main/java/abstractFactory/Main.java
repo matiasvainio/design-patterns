@@ -7,14 +7,14 @@ public class Main {
 
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
         Class c = null;
-        AbstractFactory factory = null;
+        Factory factory = null;
         Method[] m = null;
 
         System.out.println("Olen Jasper javacoodari. \nMinulla on päällä seuraavat tuotteet: ");
 
         try {
             c = Class.forName("abstractFactory.AdidasFactory");
-            factory = (AbstractFactory) c.getDeclaredConstructor().newInstance();
+            factory = (Factory) c.getDeclaredConstructor().newInstance();
             m = c.getDeclaredMethods();
         } catch (Throwable e) {
             e.printStackTrace();
@@ -28,7 +28,7 @@ public class Main {
         System.out.println("\nNyt valmistuin, ja käytän hienompia vaatteita. Kas näin: ");
         try {
             c = Class.forName("abstractFactory.BossFactory");
-            factory = (AbstractFactory) c.getDeclaredConstructor().newInstance();
+            factory = (Factory) c.getDeclaredConstructor().newInstance();
             m = c.getDeclaredMethods();
         } catch (Throwable e) {
             e.printStackTrace();
