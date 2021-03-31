@@ -23,7 +23,7 @@ import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
  */
 public class DbHandler {
     private static final String COLLECTION = "test";
-    private static volatile DbHandler INSTANCE;
+    private static DbHandler INSTANCE;
     private static String DBNAME = "test";
     private final MongoDatabase database;
     private final MongoCollection<DTO> mongoCollection;
