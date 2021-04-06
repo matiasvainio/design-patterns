@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/**
+ * Utility class that reads data from file.
+ */
 public class DataReader {
 
     public String read() {

@@ -1,5 +1,8 @@
 package decorator;
 
+/**
+ * Simple data object.
+ */
 public class SimpleData implements Data {
     private String data;
     private final DataWriter dw;
