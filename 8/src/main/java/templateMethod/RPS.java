@@ -1,23 +1,37 @@
 package templateMethod;
 
-public class RPS extends Game {
-    private final int MAX_TURNS = 2;
-    private final String[] a = {"PAPER", "SCISSORS", "ROCK"};
-    private int turns, rounds, one, two = 0;
-    private boolean end = false;
-    private int[] t = new int[2];
+import java.util.Scanner;
 
+public class RPS extends Game {
+    private final String[] a = {"PAPER", "SCISSORS", "ROCK"};
+    private int MAX_TURNS;
+    private int[] players;
+    private int turns;
+    private boolean end;
+    private Scanner scanner;
 
     @Override
     void initializeGame() {
+        MAX_TURNS = 2;
+        players = new int[2];
+        turns = 0;
+        end = false;
+        scanner = new Scanner(System.in);
     }
 
     @Override
     void makePlay(int player) {
         if (turns < MAX_TURNS) {
             int i = getRandom();
-            System.out.println("P" + player + ": " + a[i]);
-            t[player] = i;
+            if (player == 0) {
+                System.out.println("Syötä luku (0-2):");
+                int input = Integer.parseInt(scanner.nextLine());
+                players[player] = input;
+                System.out.println("P" + player + ": " + a[input]);
+            } else {
+                System.out.println("P" + player + ": " + a[i]);
+                players[player] = i;
+            }
         } else {
             end = true;
         }
@@ -33,9 +47,11 @@ public class RPS extends Game {
     @Override
     void printWinner() {
         int w = calculateWinner();
+        int q = (w == players[0]) ? 0 : 1;
         if (w == 3) System.out.println("Draw");
-        else System.out.println("Winner: \nP" + w + " with: " + a[w]);
-
+        else {
+            System.out.println("Winner: \nP" + q + " with: " + a[w]);
+        }
     }
 
     private int getRandom() {
@@ -45,12 +61,12 @@ public class RPS extends Game {
     private int calculateWinner() {
         int w;
 
-        if (t[0] == t[1]) {
+        if (players[0] == players[1]) {
             w = 3;
-        } else if (t[0] == 0 || t[1] == 0) {
-            w = Math.min(t[0], t[1]);
+        } else if (players[0] == 0 | players[1] == 0 && players[0] == 2 | players[1] == 2) {
+            w = 0;
         } else {
-            w = Math.max(t[0], t[1]);
+            w = Math.max(players[0], players[1]);
         }
 
         return w;
