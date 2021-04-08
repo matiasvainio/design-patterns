@@ -17,5 +17,6 @@ public class ConcreteStrategyB implements ListConverter {
             }
             i++;
         }
+        System.out.println();
     }
 }

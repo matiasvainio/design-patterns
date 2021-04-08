@@ -17,15 +17,14 @@ public class Main {
         list.add("8");
         list.add("9");
 
-        ConcreteStrategyA csa = new ConcreteStrategyA();
-        ConcreteStrategyB csb = new ConcreteStrategyB();
-        ConcreteStrategyC csc = new ConcreteStrategyC();
+        ListConverter csa = new ConcreteStrategyA();
+        ListConverter csb = new ConcreteStrategyB();
+        ListConverter csc = new ConcreteStrategyC();
 
         csa.listToString(list);
         System.out.println();
 
         csb.listToString(list);
-        System.out.println();
         System.out.println();
 
         csc.listToString(list);
