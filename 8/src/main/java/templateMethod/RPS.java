@@ -47,10 +47,10 @@ public class RPS extends Game {
     @Override
     void printWinner() {
         int w = calculateWinner();
-        int q = (w == players[0]) ? 0 : 1;
+        int winner = (w == players[0]) ? 0 : 1;
         if (w == 3) System.out.println("Draw");
         else {
-            System.out.println("Winner: \nP" + q + " with: " + a[w]);
+            System.out.println("Winner: \nP" + winner + " with: " + a[w]);
         }
     }
 
