@@ -49,9 +49,8 @@ public class RPS extends Game {
         int w = calculateWinner();
         int winner = (w == players[0]) ? 0 : 1;
         if (w == 3) System.out.println("Draw");
-        else {
-            System.out.println("Winner: \nP" + winner + " with: " + a[w]);
-        }
+        else System.out.println("Winner: \nP" + winner + " with: " + a[w]);
+
     }
 
     private int getRandom() {

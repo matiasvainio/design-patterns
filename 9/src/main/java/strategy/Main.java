@@ -1,33 +1,17 @@
 package strategy;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        list.add("1");
-        list.add("2");
-        list.add("3");
-        list.add("4");
-        list.add("5");
-        list.add("6");
-        list.add("7");
-        list.add("8");
-        list.add("9");
-
-        ListConverter csa = new ConcreteStrategyA();
-        ListConverter csb = new ConcreteStrategyB();
-        ListConverter csc = new ConcreteStrategyC();
-
-        csa.listToString(list);
+        Context context = new Context(new ConcreteStrategyA());
+        context.runAlgorithm();
         System.out.println();
 
-        csb.listToString(list);
+        context = new Context(new ConcreteStrategyB());
+        context.runAlgorithm();
         System.out.println();
 
-        csc.listToString(list);
-
+        context = new Context(new ConcreteStrategyC());
+        context.runAlgorithm();
     }
 }
