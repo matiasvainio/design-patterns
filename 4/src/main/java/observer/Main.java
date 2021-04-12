@@ -1,6 +1,6 @@
 package observer;
 
-public class Main {
+public class Main implements Runnable {
 
     public static void main(String[] args) {
         Timer timer = new Timer();
@@ -9,5 +9,10 @@ public class Main {
         thread.start();
 
         timer.addObserver(clock);
+    }
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread());
     }
 }
