@@ -3,8 +3,6 @@ package chainOfResponsibility;
 public class Main {
 
     public static void main(String[] args) {
-        double salary = 2_000;
-
         Supervisor sup = new Supervisor();
         Manager man = new Manager();
         CEO ceo = new CEO();
