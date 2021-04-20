@@ -24,6 +24,7 @@ public class TUI {
                     ready = false;
                 }
             }
+            System.out.println();
         }
     }
 }

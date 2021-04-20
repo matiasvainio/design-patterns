@@ -2,8 +2,6 @@ package visitor.character;
 
 import visitor.BonusVisitor;
 
-import java.util.List;
-
 public class GameCharacter {
     private CharacterState state;
 
