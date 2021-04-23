@@ -1,10 +1,10 @@
 package prototype;
 
-public class ClockHandImpl implements ClockHand {
+public class ClockHand implements Cloneable {
     private int value;
 
-    public ClockHandImpl() {
-        this.value = 0;
+    public ClockHand(int value) {
+        this.value = value;
     }
 
     public int getValue() {
@@ -16,7 +16,12 @@ public class ClockHandImpl implements ClockHand {
     }
 
     @Override
-    public ClockHand clone() {
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }
