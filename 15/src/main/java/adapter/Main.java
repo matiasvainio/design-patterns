@@ -11,8 +11,6 @@ public class Main {
         square.printSquare();
         testSquare(circleAdapter);
 
-        System.out.println("Foobar123");
-    
 
     public static void testSquare(Square square) {
         square.printSquare();
